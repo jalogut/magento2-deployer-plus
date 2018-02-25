@@ -6,7 +6,7 @@
 
 ## Motivation
 
-This project has been created with the motivation to offer a common solution for fully-automated deployments on all versions of Magento 2.
+This project aims to offer a common solution for fully-automated deployments on all versions of Magento 2.
 This tool uses the well know [Deployer](https://deployer.org) and adds specific recipes for each Magento 2 version.
 
 ## Important Features
