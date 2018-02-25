@@ -1,0 +1,22 @@
+{
+  "name": "jalogut/magento2-deployer-plus",
+  "description": "Magento 2 deployment tool based on deployer.org",
+  "keywords": ["magento2", "deployment", "deployer", "deploy", "tool"],
+  "license": [
+    "GPL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Juan Alonso",
+      "email": "juan.jalogut@gmail.com"
+    }
+  ],
+  "require": {
+    "deployer/deployer": "^6.0"
+  },
+  "autoload": {
+    "files": [
+      "autoload.php"
+    ]
+  }
+}

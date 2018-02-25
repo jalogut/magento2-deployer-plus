@@ -1,0 +1,19 @@
+cache
+page_cache
+_cache
+pub/media
+env.php
+tests
+Test
+Tests
+var/log
+logs
+.git
+.gitattributes
+.gitignore
+.gitmodules
+
+# deployer files
+bin/dep
+deploy.php
+artifacts

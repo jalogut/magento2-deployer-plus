@@ -1,0 +1,62 @@
+<?php
+
+namespace Deployer;
+
+require 'recipe/magento_2_2.php';
+
+// Magento dir into the project root. Set "." if magento is installed on project root
+set('magento_dir', 'magento');
+// [Optional] Git repository. Only needed if not using build + artifact strategy
+set('repository', '');
+// Space separated list of languages for static-content:deploy
+set('languages', 'en_US');
+
+// Tasks available only for specific roles
+task('database:upgrade')->onRoles('db_write');
+task('config:import')->onRoles('db_write');
+task('crontab:update')->onRoles('crontab_update');
+
+// OPcache configuration
+task('cache:clear:opcache', 'sudo /usr/sbin/service php7.0-fpm reload');
+after('clear:cache', 'cache:clear:opcache');
+task('cache:clear:opcache')->onRoles('opcache_clear');
+
+// Build host
+localhost('build');
+
+// Remote Servers
+host('dev_master')
+    ->hostname('<hostname>')
+    ->user('<user>')
+    ->set('deploy_path', '~')
+    ->stage('dev')
+    ->roles('db_write', 'crontab_update', 'opcache_clear');
+
+host('stage_master')
+    ->hostname('<hostname>')
+    ->user('<user>')
+    ->set('deploy_path', '~')
+    ->stage('stage')
+    ->roles('db_write', 'crontab_update', 'opcache_clear');
+
+host('prod_master')
+    ->hostname('<hostname>')
+    ->user('<user>')
+    ->set('deploy_path', '~')
+    ->stage('prod')
+    ->roles('db_write', 'crontab_update', 'opcache_clear');
+
+// Multi-server Configuration
+//host('prod_slave_1')
+//    ->hostname('<hostname>')
+//    ->user('<user>')
+//    ->set('deploy_path', '~')
+//    ->stage('prod')
+//    ->roles('opcache_clear');
+//
+//host('prod_slave_1')
+//    ->hostname('<hostname>')
+//    ->user('<user>')
+//    ->set('deploy_path', '~')
+//    ->stage('prod')
+//    ->roles('opcache_clear');
