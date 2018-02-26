@@ -28,11 +28,9 @@ set('magento_bin', '{{magento_dir}}/bin/magento');
 
 set('shared_files', [
     '{{magento_dir}}/app/etc/env.php',
-    '{{magento_dir}}/var/.maintenance.ip',
 ]);
 set('shared_dirs', [
-    '{{magento_dir}}/var/log',
-    '{{magento_dir}}/var/backups',
+    '{{magento_dir}}/var',
     '{{magento_dir}}/pub/media',
 ]);
 set('writable_dirs', [

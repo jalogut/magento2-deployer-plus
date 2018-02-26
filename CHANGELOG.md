@@ -8,8 +8,10 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 ### Added
 
 ### Changed
+* Add `var` dir in `shared_dirs`. It makes more sense for multi-servers setup to have `var` dir shared among servers.
 
 ### Removed
+* Remove `var/.ip.maintenance` and `var/backups from shared configuration
 
 ## [0.1] - 25-01-2018
 First working version
