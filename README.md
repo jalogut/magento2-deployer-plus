@@ -53,6 +53,18 @@ cp <vendor_dir>/jalogut/magento2-deployer-plus/deploy.php.sample_2_2 deploy.php
 	<bin_dir>/dep deploy-artifact [<stage>]
 	```
 	
+## Disclaimer
+
+### Build command
+Build command can only be used if config propagation is properly configured. See Magento DevDocs:
+
+* [Propagate config accross systems](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
+
+Also check `app:config:dump` issue and workaround here:
+
+* [PR #12410](https://github.com/magento/magento2/pull/12410)
+* [Gist workaround](https://gist.github.com/jalogut/d72e0af6e10c502bff90423e66bf07b9)
+
 ## Troubleshooting
 
 #### Js translations missing (magento versions >=2.1.3 <2.2.1)
