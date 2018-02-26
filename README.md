@@ -42,17 +42,17 @@ cp <vendor_dir>/jalogut/magento2-deployer-plus/deploy.php.sample_2_2 deploy.php
 
 ### Git deploys:
 
-	```
-	<bin_dir>/dep deploy [<stage>]
-	```
+```
+<bin_dir>/dep deploy [<stage>]
+```
 
 ### Build artifact deploys: (only Magento >= 2.2)
-	
-	```
-	<bin_dir>/dep build
-	<bin_dir>/dep deploy-artifact [<stage>]
-	```
-	
+
+```
+<bin_dir>/dep build
+<bin_dir>/dep deploy-artifact [<stage>]
+```
+
 ## Disclaimer
 
 ### Build command
