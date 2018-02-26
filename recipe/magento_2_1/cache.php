@@ -7,4 +7,6 @@
 
 namespace Deployer;
 
-task('clear:cache', '{{magento_bin}} cache:flush');
+task('cache:clear:magento', '{{magento_bin}} cache:flush');
+
+task('cache:clear', 'cache:clear:magento');

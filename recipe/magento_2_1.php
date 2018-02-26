@@ -55,7 +55,7 @@ task('deploy', [
     'maintenance:set',
     'database:upgrade',
     'deploy:symlink',
-    'clear:cache',
+    'cache:clear',
     'deploy:unlock',
     'cleanup',
     'success',
