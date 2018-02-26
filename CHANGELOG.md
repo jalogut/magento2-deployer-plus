@@ -6,6 +6,13 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 ### Added
+
+### Changed
+
+### Removed
+
+## [0.2] - 26-01-2018
+### Added
 * Task `cache:clear:magento`
 
 ### Changed
