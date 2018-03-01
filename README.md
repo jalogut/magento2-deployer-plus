@@ -1,13 +1,13 @@
 # Magento 2 Deployer Plus
 
-* Reliable fully-automated deployments tool for Magento2.
+* Reliable fully-automated deployments tool for Magento 2.
 * Zero downtime deployments on Magento versions >= 2.2
 * Automating your deployments is as easy as defining the servers where you want to deploy to.
 
 ## Motivation
 
 This project aims to offer a common solution for fully-automated deployments on all versions of Magento 2.
-This tool uses the well know [Deployer](https://deployer.org) and adds specific recipes for each Magento 2 version.
+This tool uses the well known [Deployer](https://deployer.org) and adds specific recipes for each Magento 2 version.
 
 ## Important Features
 
