@@ -7,4 +7,4 @@
 
 namespace Deployer;
 
-task('database:upgrade', '{{magento_bin}} setup:upgrade --keep-generated');
+task('database:upgrade', '{{bin/php}} {{magento_bin}} setup:upgrade --keep-generated');

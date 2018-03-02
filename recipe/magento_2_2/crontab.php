@@ -7,4 +7,4 @@
 
 namespace Deployer;
 
-task('crontab:update', '{{magento_bin}} cron:install --force');
+task('crontab:update', '{{bin/php}} {{magento_bin}} cron:install --force');

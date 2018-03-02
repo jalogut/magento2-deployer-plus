@@ -16,7 +16,7 @@ const OUTPUT_CONFIG_IMPORT_NEEDED = 'This command is unavailable right now. ' .
 set('config_import_needed', function () {
     try {
         // NOTE: Workaround until "app:config:status" is available on Magento 2.2.3
-        run('{{release_path}}/{{magento_bin}} config:set workaround/check/config_status 1');
+        run('{{bin/php}} {{release_path}}/{{magento_bin}} config:set workaround/check/config_status 1');
     } catch (ProcessFailedException $e) {
         if (trim($e->getProcess()->getOutput()) == OUTPUT_CONFIG_IMPORT_NEEDED) {
             return true;
@@ -31,6 +31,6 @@ set('config_import_needed', function () {
 
 task('config:import', function () {
     get('config_import_needed') ?
-        run('{{release_path}}/{{magento_bin}} app:config:import') :
+        run('{{bin/php}} {{release_path}}/{{magento_bin}} app:config:import') :
         writeln('Skipped -> App config is up to date');
 });
