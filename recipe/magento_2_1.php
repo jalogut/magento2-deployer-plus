@@ -24,7 +24,7 @@ set('git_tty', true);
 
 # ----- Magento properties -------
 set('magento_dir', 'magento');
-set('magento_bin', '{{bin/php}} {{magento_dir}}/bin/magento');
+set('magento_bin', '{{magento_dir}}/bin/magento');
 
 set('shared_files', [
     '{{magento_dir}}/app/etc/env.php',
