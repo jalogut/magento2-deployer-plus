@@ -11,6 +11,10 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [1.0] - 05-03-2018
+### Added
+* Use deployers {{bin/php}} with every execution of {{magento_bin}}
+
 ## [0.2] - 26-01-2018
 ### Added
 * Task `cache:clear:magento`
