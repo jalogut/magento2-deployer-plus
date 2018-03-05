@@ -80,9 +80,9 @@ Also check `app:config:dump` issue and workaround here:
 	```php
 	// deploy.php
 	task('files:static_assets', '
-		{{magento_bin}} setup:static-content:deploy en_US {{static_deploy_options}}
-		{{magento_bin}} setup:static-content:deploy de_CH {{static_deploy_options}}
-		{{magento_bin}} setup:static-content:deploy fr_FR {{static_deploy_options}}
+		{{bin/php}} {{magento_bin}} setup:static-content:deploy en_US {{static_deploy_options}}
+		{{bin/php}} {{magento_bin}} setup:static-content:deploy de_CH {{static_deploy_options}}
+		{{bin/php}} {{magento_bin}} setup:static-content:deploy fr_FR {{static_deploy_options}}
 	');
 	```
 	

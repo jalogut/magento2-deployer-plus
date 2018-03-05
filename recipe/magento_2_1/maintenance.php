@@ -11,7 +11,7 @@ task('maintenance:set', function () {
     # IMPORTANT: do not use {{current_path}} for the "-f" check.
     # {{current_path}} returns error if symlink does not exists
     test('[ -f {{deploy_path}}/current/{{magento_bin}} ]') ?
-        run('{{current_path}}/{{magento_bin}} maintenance:enable') :
+        run('{{bin/php}} {{current_path}}/{{magento_bin}} maintenance:enable') :
         writeln('Skipped -> current not found');
 });
 
@@ -23,6 +23,6 @@ task('maintenance:unset', function () {
         return;
     }
     test('[ -f {{deploy_path}}/current/{{magento_dir}}/var/.maintenance.flag ]') ?
-        run('{{current_path}}/{{magento_bin}} maintenance:disable') :
+        run('{{bin/php}} {{current_path}}/{{magento_bin}} maintenance:disable') :
         writeln('Skipped -> maintenance is already unset');
 });
