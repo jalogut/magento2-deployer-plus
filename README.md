@@ -130,6 +130,7 @@ Also check `app:config:dump` issue and workaround here:
 ## Developers
 
 * [Juan Alonso](https://github.com/jalogut)
+* [Contributors](https://github.com/jalogut/magento2-deployer-plus/graphs/contributors)
 
 Licence
 -------
