@@ -11,9 +11,14 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [1.0.1] - 20-03-2018
+### Changed
+* Fix `crontab:update` step due to changes introduced on version 2.2.2
+    * [https://github.com/magento/magento2/commit/79e9054aa2fd66a6c804774617cd0f5d14ffc49a](https://github.com/magento/magento2/commit/79e9054aa2fd66a6c804774617cd0f5d14ffc49a)
+
 ## [1.0] - 05-03-2018
 ### Added
-* Use deployers {{bin/php}} with every execution of {{magento_bin}}
+* Use deployers `{{bin/php}}` with every execution of `{{magento_bin}}`
 
 ## [0.2] - 26-01-2018
 ### Added
