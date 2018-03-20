@@ -7,7 +7,4 @@
 
 namespace Deployer;
 
-task('crontab:update', '
-    {{bin/php}} {{current_path}}/{{magento_bin}} cron:remove;
-    {{bin/php}} {{release_path}}/{{magento_bin}} cron:install;
-');
+task('crontab:update', '{{bin/php}} {{magento_bin}} cron:install --force');
