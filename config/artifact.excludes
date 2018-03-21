@@ -1,5 +1,5 @@
-cache
-page_cache
+var/cache
+var/page_cache
 _cache
 pub/media
 env.php
