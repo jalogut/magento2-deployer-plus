@@ -9,4 +9,6 @@ namespace Deployer;
 
 task('cache:clear:magento', '{{bin/php}} {{magento_bin}} cache:flush');
 
-task('cache:clear', 'cache:clear:magento');
+task('cache:clear', function(){
+	invoke('cache:clear:magento');
+});
