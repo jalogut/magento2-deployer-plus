@@ -12,3 +12,9 @@ task('cache:clear:magento', '{{bin/php}} {{magento_bin}} cache:flush');
 task('cache:clear', function () {
     invoke('cache:clear:magento');
 });
+
+task('cache:clear:if-maintenance', function () {
+    test('[ -f {{deploy_path}}/current/{{magento_dir}}/var/.maintenance.flag ]') ?
+        invoke('cache:clear:magento') :
+        writeln('Skipped -> maintenance is not set');
+});

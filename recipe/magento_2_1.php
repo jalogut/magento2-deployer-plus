@@ -53,6 +53,7 @@ task('deploy', [
     'deploy:writable',
     'files:generate',
     'maintenance:set',
+    'cache:clear:if-maintenance',
     'database:upgrade',
     'deploy:symlink',
     'maintenance:unset',
