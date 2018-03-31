@@ -4,6 +4,11 @@ namespace Deployer;
 
 require 'recipe/magento_2_1.php';
 
+// Use timestamp for release name
+set('release_name', function () {
+    return date('YmdHis');
+});
+
 // Magento dir into the project root. Set "." if magento is installed on project root
 set('magento_dir', 'magento');
 // Git repository
