@@ -11,6 +11,28 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [1.0.5] - 01-04-2018
+### Added
+* Add `cache:clear:if-maintenance` to flush all caches after maintenance is set
+* Add timestamp for `release_name` in sample files
+
+## [1.0.4] - 27-03-2018
+### Added
+* `maintenance:unset` after switching symlink
+
+### Removed
+* Remove not needed `maintenance:unset` during rollback
+
+## [1.0.3] - 27-03-2018
+### Changed
+* Fix `crontab:update` execute only if current path exists
+* Fix `cache:clear` properly call task using `invoke()`
+* Task destroy artefact after extraction
+
+## [1.0.2] - 21-03-2018
+### Changed
+* Fix exclude `var/cache` and `var/page_cache` from artifact. Excluding `cache` was also excluding some module cache folders that are needed.
+
 ## [1.0.1] - 20-03-2018
 ### Changed
 * Fix `crontab:update` step due to changes introduced on version 2.2.2
@@ -32,4 +54,4 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 * Remove `var/.ip.maintenance` and `var/backups from shared configuration
 
 ## [0.1] - 25-01-2018
-First working version
+* First working version
