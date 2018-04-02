@@ -11,6 +11,10 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [1.0.6] - 02-04-2018
+### Changed
+* Fix `cache:clear` command call on `rollback` task
+
 ## [1.0.5] - 01-04-2018
 ### Added
 * Add `cache:clear:if-maintenance` to flush all caches after maintenance is set

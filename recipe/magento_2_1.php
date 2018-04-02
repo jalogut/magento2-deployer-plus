@@ -66,4 +66,4 @@ task('deploy', [
 after('deploy:failed', 'deploy:unlock');
 
 before('rollback', 'rollback:validate');
-after('rollback', 'clear:cache');
+after('rollback', 'cache:clear');
