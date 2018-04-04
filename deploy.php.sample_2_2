@@ -17,7 +17,7 @@ set('repository', '');
 set('languages', 'en_US');
 
 // OPcache configuration
-task('cache:clear:opcache', 'sudo /usr/sbin/service php7.0-fpm reload');
+task('cache:clear:opcache', 'sudo systemctl reload php-fpm');
 after('cache:clear', 'cache:clear:opcache');
 
 // Build host
@@ -58,7 +58,7 @@ host('prod_master')
 //    ->stage('prod')
 //    ->roles('slave');
 //
-//host('prod_slave_1')
+//host('prod_slave_2')
 //    ->hostname('<hostname>')
 //    ->user('<user>')
 //    ->set('deploy_path', '~')
