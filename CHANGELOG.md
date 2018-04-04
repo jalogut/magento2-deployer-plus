@@ -11,6 +11,10 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [1.1.1] - 04-04-2018
+### Added
+* Execute `setup:upgrade` and `app:config:import` in no interaction mode
+
 ## [1.1] - 04-04-2018
 ### Removed
 * Remove `writable_dirs` param because permissions are already set on `files:permissions` task

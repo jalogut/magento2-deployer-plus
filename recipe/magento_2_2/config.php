@@ -31,6 +31,6 @@ set('config_import_needed', function () {
 
 task('config:import', function () {
     get('config_import_needed') ?
-        run('{{bin/php}} {{release_path}}/{{magento_bin}} app:config:import') :
+        run('{{bin/php}} {{release_path}}/{{magento_bin}} app:config:import --no-interaction') :
         writeln('Skipped -> App config is up to date');
 });
