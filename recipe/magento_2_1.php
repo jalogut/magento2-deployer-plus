@@ -15,7 +15,6 @@ require __DIR__ . '/magento_2_1/cache.php';
 require __DIR__ . '/magento_2_1/rollback.php';
 
 # ----- Deployment properties ---
-set('ci_branch', 'develop');
 set('default_timeout', 900);
 // [Optional] git repository
 set('repository', '');
@@ -31,11 +30,6 @@ set('shared_files', [
 ]);
 set('shared_dirs', [
     '{{magento_dir}}/var',
-    '{{magento_dir}}/pub/media',
-]);
-set('writable_dirs', [
-    '{{magento_dir}}/var',
-    '{{magento_dir}}/pub/static',
     '{{magento_dir}}/pub/media',
 ]);
 
