@@ -11,6 +11,10 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [1.0.7] - 04-04-2018
+### Removed
+* Sample configuration of `maintenance` and `cache` tasks only executed for master server. These tasks should be executed on all servers unless the `var` folder is shared among server instances
+
 ## [1.0.6] - 02-04-2018
 ### Changed
 * Fix `cache:clear` command call on `rollback` task

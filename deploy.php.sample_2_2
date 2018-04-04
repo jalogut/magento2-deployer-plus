@@ -47,13 +47,9 @@ host('prod_master')
 
 // ---- Multi-server Configuration ----
 // Tasks available only for specific roles
-// task('maintenance:set:if-needed')->onRoles('master');
-// task('maintenance:set')->onRoles('master');
-// task('maintenance:unset')->onRoles('master');
 // task('config:import')->onRoles('master');
 // task('database:upgrade')->onRoles('master');
 // task('crontab:update')->onRoles('master');
-// task('cache:clear:magento')->onRoles('master');
 //
 //host('prod_slave_1')
 //    ->hostname('<hostname>')
