@@ -1,0 +1,36 @@
+parameters:
+    bin_dir: ./vendor/bin
+    git_dir: .
+    stop_on_failure: false
+    hide_circumvention_tip: true
+    ascii:
+        failed: ~
+        succeeded: ~
+    composer:
+        file: ./composer.json
+        no_check_all: true
+        no_check_lock: false
+        no_check_publish: false
+        with_dependencies: false
+        strict: false
+    git_blacklist:
+        keywords:
+            - "die("
+            - "var_dump("
+            - "exit;"
+            - "console.log("
+        triggered_by: ['php']
+        regexp_type: G
+    tasks:
+        phpmd:
+            ruleset: ['phpmd.xml']
+        phpcs:
+            standard: 'phpcs.xml'
+        phpstan:
+            autoload_file: ~
+            configuration: ~
+            level: 0
+            force_patterns: []
+            ignore_patterns: []
+            triggered_by: ['php']
+    extensions: []
