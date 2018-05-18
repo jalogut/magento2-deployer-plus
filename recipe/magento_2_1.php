@@ -29,14 +29,22 @@ set('magento_bin', '{{magento_dir}}/bin/magento');
 set('shared_files', [
     '{{magento_dir}}/app/etc/env.php',
 ]);
+
 set('shared_dirs', [
     '{{magento_dir}}/var',
     '{{magento_dir}}/pub/media',
+    '{{magento_dir}}/pub/static/_cache',
 ]);
+
 set('writable_dirs', [
     '{{magento_dir}}/var',
     '{{magento_dir}}/pub/static',
     '{{magento_dir}}/pub/media',
+    '{{magento_dir}}/pub/static/_cache',
+]);
+
+set('clear_paths', [
+    '{{magento_dir}}/pub/static/_cache',
 ]);
 
 # ---- Deployment Flow
