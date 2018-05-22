@@ -4,6 +4,11 @@ namespace Deployer;
 
 require 'recipe/magento_2_2.php';
 
+// Use timestamp for release name
+set('release_name', function () {
+    return date('YmdHis');
+});
+
 // Magento dir into the project root. Set "." if magento is installed on project root
 set('magento_dir', 'magento');
 // [Optional] Git repository. Only needed if not using build + artifact strategy
@@ -12,7 +17,7 @@ set('repository', '');
 set('languages', 'en_US');
 
 // OPcache configuration
-task('cache:clear:opcache', 'sudo /usr/sbin/service php7.0-fpm reload');
+task('cache:clear:opcache', 'sudo systemctl reload php-fpm');
 after('cache:clear', 'cache:clear:opcache');
 
 // Build host
@@ -42,13 +47,9 @@ host('prod_master')
 
 // ---- Multi-server Configuration ----
 // Tasks available only for specific roles
-// task('maintenance:set:if-needed')->onRoles('master');
-// task('maintenance:set')->onRoles('master');
-// task('maintenance:unset')->onRoles('master');
 // task('config:import')->onRoles('master');
 // task('database:upgrade')->onRoles('master');
 // task('crontab:update')->onRoles('master');
-// task('cache:clear:magento')->onRoles('master');
 //
 //host('prod_slave_1')
 //    ->hostname('<hostname>')
@@ -57,7 +58,7 @@ host('prod_master')
 //    ->stage('prod')
 //    ->roles('slave');
 //
-//host('prod_slave_1')
+//host('prod_slave_2')
 //    ->hostname('<hostname>')
 //    ->user('<user>')
 //    ->set('deploy_path', '~')

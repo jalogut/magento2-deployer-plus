@@ -15,7 +15,6 @@ require __DIR__ . '/magento_2_1/cache.php';
 require __DIR__ . '/magento_2_1/rollback.php';
 
 # ----- Deployment properties ---
-set('ci_branch', 'develop');
 set('default_timeout', 900);
 // [Optional] git repository
 set('repository', '');
@@ -61,8 +60,10 @@ task('deploy', [
     'deploy:writable',
     'files:generate',
     'maintenance:set',
+    'cache:clear:if-maintenance',
     'database:upgrade',
     'deploy:symlink',
+    'maintenance:unset',
     'cache:clear',
     'deploy:unlock',
     'cleanup',
@@ -72,5 +73,4 @@ task('deploy', [
 after('deploy:failed', 'deploy:unlock');
 
 before('rollback', 'rollback:validate');
-after('rollback', 'maintenance:unset');
-after('rollback', 'clear:cache');
+after('rollback', 'cache:clear');

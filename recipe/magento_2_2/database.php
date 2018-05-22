@@ -31,6 +31,6 @@ set('database_upgrade_needed', function () {
 
 task('database:upgrade', function () {
     get('database_upgrade_needed') ?
-        run('{{bin/php}} {{release_path}}/{{magento_bin}} setup:upgrade --keep-generated') :
+        run('{{bin/php}} {{release_path}}/{{magento_bin}} setup:upgrade --keep-generated --no-interaction') :
         writeln('Skipped -> All Modules are up to date');
 });
