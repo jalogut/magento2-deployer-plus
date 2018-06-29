@@ -11,6 +11,19 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [2.0] - 29-06-2018
+### Added
+* `var` subdirectories added to `shared_dirs`.
+    * `/var/log'
+    * `/var/backups`
+    * `/var/cache`
+    * `/var/page_cache`
+    * `/var/session`
+* `maintenance:unset` during rollback
+
+### Removed
+* remove `var` dir from `shared_dirs` because `generated` and `view_preprocessed` should not be shared among releases. If not, we are changing the current generated code while building the new release.
+
 ## [1.1.1] - 04-04-2018
 ### Added
 * Execute `setup:upgrade` and `app:config:import` in no interaction mode
