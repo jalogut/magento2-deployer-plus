@@ -1,5 +1,7 @@
 # Magento 2 Deployer Plus
 
+[![Build Status](https://travis-ci.com/jalogut/magento2-deployer-plus.svg?branch=develop)](https://travis-ci.com/jalogut/magento2-deployer-plus)
+
 * Reliable fully-automated deployments tool for Magento 2.
 * Zero downtime deployments on Magento versions >= 2.2
 * Automating your deployments is as easy as defining the servers where you want to deploy to.

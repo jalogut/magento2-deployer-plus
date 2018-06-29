@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Magento 2 Deployer Plus PHP MD Rules"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description/>
+
+    <rule ref="rulesets/codesize.xml"/>
+    <rule ref="rulesets/design.xml">
+        <exclude name="CouplingBetweenObjects" />
+    </rule>
+    <rule ref="rulesets/naming.xml"/>
+    <rule ref="rulesets/cleancode.xml"/>
+    <rule ref="rulesets/unusedcode.xml">
+        <exclude name="UnusedFormalParameter" />
+    </rule>
+</ruleset>
