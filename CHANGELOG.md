@@ -20,6 +20,7 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
     * `/var/page_cache`
     * `/var/session`
 * `maintenance:unset` during rollback
+* Use `app:config:status` command on Magento versions `>=2.2.5`
 
 ### Removed
 * remove `var` dir from `shared_dirs` because `generated` and `view_preprocessed` should not be shared among releases. If not, we are changing the current generated code while building the new release.
