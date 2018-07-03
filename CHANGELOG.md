@@ -11,6 +11,10 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [2.0.1] - 03-07-2018
+### Changed
+* Update require recipe path on sample files. Now the whole relative path to vendor dir is needed.
+
 ## [2.0] - 29-06-2018
 ### Added
 * `var` subdirectories added to `shared_dirs`.
@@ -21,6 +25,9 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
     * `/var/session`
 * `maintenance:unset` during rollback
 * Use `app:config:status` command on Magento versions `>=2.2.5`
+
+### Changed
+* Use `deployer/dist` instead of `deployer/deployer` to avoid conflicts with composer dependencies.
 
 ### Removed
 * remove `var` dir from `shared_dirs` because `generated` and `view_preprocessed` should not be shared among releases. If not, we are changing the current generated code while building the new release.
