@@ -30,8 +30,12 @@ set('shared_files', [
 ]);
 
 set('shared_dirs', [
-    '{{magento_dir}}/var',
     '{{magento_dir}}/pub/media',
+    '{{magento_dir}}/var/log',
+    '{{magento_dir}}/var/backups',
+    '{{magento_dir}}/var/cache',
+    '{{magento_dir}}/var/page_cache',
+    '{{magento_dir}}/var/session',
     '{{magento_dir}}/pub/static/_cache',
 ]);
 
@@ -73,4 +77,5 @@ task('deploy', [
 after('deploy:failed', 'deploy:unlock');
 
 before('rollback', 'rollback:validate');
+after('rollback', 'maintenance:unset');
 after('rollback', 'cache:clear');
