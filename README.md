@@ -40,6 +40,12 @@ cp <vendor_dir>/jalogut/magento2-deployer-plus/deploy.php.sample_2_1 deploy.php
 cp <vendor_dir>/jalogut/magento2-deployer-plus/deploy.php.sample_2_2 deploy.php
 ```
 
+### Magento >= 2.2.5
+
+```
+cp <vendor_dir>/jalogut/magento2-deployer-plus/deploy.php.sample_2_5 deploy.php
+```
+
 ## Usage
 
 ### Git deploys:
