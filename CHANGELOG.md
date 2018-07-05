@@ -11,6 +11,20 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [2.1] - 05-07-2018
+### Added
+* Task `deploy:override_shared` to replace dirs and create symlinks taking the dir from new release as source
+    * This is needed for caches. They cannot be symlinked during the files generation but they need to replace previous
+    ones and be shared among servers in multi-server setups.
+* New params `override_shared_dirs` and `override_shared_files`
+
+### Changed
+* Cache dirs are moved from `shared_dirs` to `override_shared_dirs`
+
+### Removed
+* Default values for `writable_dirs` and `clean_paths` have been removed. They are no longer needed as the dir
+permissions are set with `files:permissions` tasks and the `static/_cache` is overwritten with `override_shared_dirs`
+
 ## [2.0.1] - 03-07-2018
 ### Changed
 * Update require recipe path on sample files. Now the whole relative path to vendor dir is needed.
@@ -18,7 +32,7 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 ## [2.0] - 29-06-2018
 ### Added
 * `var` subdirectories added to `shared_dirs`.
-    * `/var/log'
+    * `/var/log`
     * `/var/backups`
     * `/var/cache`
     * `/var/page_cache`
