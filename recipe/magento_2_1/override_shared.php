@@ -9,6 +9,9 @@ namespace Deployer;
 
 use Deployer\Exception\Exception;
 
+set('override_shared_dirs', []);
+set('override_shared_files', []);
+
 desc('Creating Override symlinks for override shared files and dirs');
 task('deploy:override_shared', function () {
     $sharedPath = "{{deploy_path}}/shared";
