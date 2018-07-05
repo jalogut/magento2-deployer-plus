@@ -24,6 +24,7 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 ### Removed
 * Default values for `writable_dirs` and `clean_paths` have been removed. They are no longer needed as the dir
 permissions are set with `files:permissions` tasks and the `static/_cache` is overwritten with `override_shared_dirs`
+* Task `crontab:update` removed because it appends new cronjobs with every release. We'll fix it in a future release
 
 ## [2.0.1] - 03-07-2018
 ### Changed
