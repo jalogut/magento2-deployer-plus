@@ -26,11 +26,4 @@ parameters:
             ruleset: ['phpmd.xml']
         phpcs:
             standard: 'phpcs.xml'
-        phpstan:
-            autoload_file: ~
-            configuration: ~
-            level: 0
-            force_patterns: []
-            ignore_patterns: []
-            triggered_by: ['php']
     extensions: []
