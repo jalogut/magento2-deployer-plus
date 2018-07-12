@@ -13,6 +13,7 @@ require __DIR__ . '/magento_2_1/maintenance.php';
 require __DIR__ . '/magento_2_1/database.php';
 require __DIR__ . '/magento_2_1/cache.php';
 require __DIR__ . '/magento_2_1/rollback.php';
+require __DIR__ . '/magento_2_1/override_shared.php';
 
 # ----- Deployment properties ---
 set('default_timeout', 900);
@@ -33,20 +34,12 @@ set('shared_dirs', [
     '{{magento_dir}}/pub/media',
     '{{magento_dir}}/var/log',
     '{{magento_dir}}/var/backups',
+    '{{magento_dir}}/var/session',
+]);
+
+set('override_shared_dirs', [
     '{{magento_dir}}/var/cache',
     '{{magento_dir}}/var/page_cache',
-    '{{magento_dir}}/var/session',
-    '{{magento_dir}}/pub/static/_cache',
-]);
-
-set('writable_dirs', [
-    '{{magento_dir}}/var',
-    '{{magento_dir}}/pub/static',
-    '{{magento_dir}}/pub/media',
-    '{{magento_dir}}/pub/static/_cache',
-]);
-
-set('clear_paths', [
     '{{magento_dir}}/pub/static/_cache',
 ]);
 
@@ -66,6 +59,7 @@ task('deploy', [
     'maintenance:set',
     'cache:clear:if-maintenance',
     'database:upgrade',
+    'deploy:override_shared',
     'deploy:symlink',
     'maintenance:unset',
     'cache:clear',

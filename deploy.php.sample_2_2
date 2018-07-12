@@ -2,7 +2,7 @@
 
 namespace Deployer;
 
-require 'recipe/magento_2_2.php';
+require 'vendor/jalogut/magento2-deployer-plus/recipe/magento_2_2.php';
 
 // Use timestamp for release name
 set('release_name', function () {
