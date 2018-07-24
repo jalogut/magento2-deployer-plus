@@ -13,13 +13,6 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 const OUTPUT_CONFIG_IMPORT_NEEDED = 'This command is unavailable right now. ' .
     'To continue working with it please run app:config:import or setup:upgrade command before.';
 
-/*
- * In dev_modules, Magento modules can be specified that should be removed from app/etc/config.php during deployment
- * Modules installed with "require-dev" that are present in app/etc/config.php must be added here to prevent problems
- * with bin/magento setup:db:status
- */
-set('dev_modules', []);
-
 set('config_import_needed', function () {
     try {
         // NOTE: Workaround until "app:config:status" is available on Magento 2.2.3
@@ -42,6 +35,14 @@ task('config:import', function () {
         writeln('Skipped -> App config is up to date');
 });
 
+/*
+ * In dev_modules, Magento modules can be specified that should be removed from app/etc/config.php during deployment
+ * Modules installed with "require-dev" that are present in app/etc/config.php must be added here to prevent problems
+ * with bin/magento setup:db:status
+ */
+set('dev_modules', []);
+
+desc('Remove dev_modules modules from app/etc/config.php');
 task('config:remove-dev-modules', function () {
     $modules = get('dev_modules');
     if (!empty($modules)) {

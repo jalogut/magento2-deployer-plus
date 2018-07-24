@@ -11,6 +11,11 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [2.2] - 24-07-2018
+### Added
+* Task `config:remove-dev-modules` that removes modules specified in `dev_modules` from `app/etc/config.php` during deployment.
+Modules installed with composer `require-dev` that are present in `app/etc/config.php` must be added here to prevent problems with `bin/magento setup:db:status`
+
 ## [2.1] - 05-07-2018
 ### Added
 * Task `deploy:override_shared` to replace dirs and create symlinks taking the dir from new release as source

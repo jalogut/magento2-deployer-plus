@@ -63,6 +63,7 @@ task('deploy', [
     'deploy:release',
     'deploy:update_code',
     'deploy:vendors',
+    'config:remove-dev-modules',
     'deploy:clear_paths',
     'deploy:shared',
     'deploy:writable',
