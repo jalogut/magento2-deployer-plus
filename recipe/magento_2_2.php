@@ -24,6 +24,7 @@ task('build', function () {
     set('static_deploy_options', '-f ' . $origStaticOptions);
 
     invoke('deploy:vendors');
+    invoke('config:remove-dev-modules');
     invoke('files:generate');
     invoke('artifact:package');
 })->local();
