@@ -13,6 +13,9 @@ logs
 .gitignore
 .gitmodules
 
+# Magento test stub modules
+app/code/Magento/Test*
+
 # deployer files
 bin/dep
 deploy.php

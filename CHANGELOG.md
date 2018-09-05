@@ -11,6 +11,15 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [2.2.1] - 05-09-2018
+### Added
+
+* Exclude test stub modules during artifact generation. Magento creates automatically these modules during integration
+tests. If these modules happen to end up in your production server, the checkout gets broken.
+
+    * https://github.com/magento/magento2/issues/12696
+    * https://github.com/magento/magento2/issues/12679
+
 ## [2.2] - 24-07-2018
 ### Added
 * Task `config:remove-dev-modules` that removes modules specified in `dev_modules` from `app/etc/config.php` during deployment.
