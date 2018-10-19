@@ -56,6 +56,8 @@ task('config:remove-dev-modules', function () {
                 writeln('Not installed: ' . $module);
             }
         }
-        \file_put_contents($configFile, "<?php\nreturn " . \var_export($config, true) . ';');
+        $updatedConfig = "<?php\nreturn " . \var_export($config, true) . ";";
+        $updatedConfigEof = "\n".$updatedConfig."\nEOF";
+        run("cat <<EOF > {{release_path}}/$configFile $updatedConfigEof");
     }
 });

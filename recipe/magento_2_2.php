@@ -19,6 +19,7 @@ require __DIR__ . '/magento_2_2/rollback.php';
 desc('Build Artifact');
 task('build', function () {
     set('deploy_path', '.');
+    set('release_path', '.');
     set('current_path', '.');
     $origStaticOptions = get('static_deploy_options');
     set('static_deploy_options', '-f ' . $origStaticOptions);
