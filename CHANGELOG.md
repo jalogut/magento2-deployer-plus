@@ -11,6 +11,11 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [2.2.2] - 19-10-2018
+### Changed
+
+* Fix `config:remove-dev-modules` step was executed local instead of remote
+
 ## [2.2.1] - 05-09-2018
 ### Added
 

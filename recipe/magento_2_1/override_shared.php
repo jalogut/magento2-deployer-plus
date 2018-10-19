@@ -56,14 +56,14 @@ task('deploy:override_shared', function () {
 
         // Check if shared file exists in shared and remove it
         if (test("[ -f $sharedPath/$file ]")) {
-            run("rm -rf $sharedPath/$file;");
+            run("rm -rf $sharedPath/$file");
         }
 
         // If file exist in release
         if (test("[ -f {{release_path}}/$file ]")) {
             // Copy file in shared dir if not present
             run("cp -rv {{release_path}}/$file $sharedPath/$file");
-            run("rm -rf {{release_path}}/$file;");
+            run("rm -rf {{release_path}}/$file");
         }
 
         // Ensure dir is available in release
