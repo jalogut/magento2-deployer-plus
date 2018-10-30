@@ -18,7 +18,7 @@ set('artifact_path', function () {
     return get('artifact_dir') . '/' . get('artifact_file');
 });
 
-task('artifact:package', 'tar --exclude-from={{artifact_excludes_file}} -czf {{artifact_path}} .');
+task('artifact:package', 'tar --exclude-from={{artifact_excludes_file}} -chzf {{artifact_path}} .');
 
 task('artifact:upload', function () {
     upload(get('artifact_path'), '{{release_path}}');
