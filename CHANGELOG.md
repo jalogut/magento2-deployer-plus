@@ -11,6 +11,11 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [2.3.0] - 18-12-2018
+### Changed
+
+* `files:permissions` task now runs faster and is more concise.
+
 ## [2.2.2] - 19-10-2018
 ### Changed
 
