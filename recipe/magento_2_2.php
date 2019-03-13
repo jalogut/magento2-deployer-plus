@@ -14,6 +14,7 @@ require __DIR__ . '/magento_2_2/maintenance.php';
 require __DIR__ . '/magento_2_2/database.php';
 require __DIR__ . '/magento_2_2/config.php';
 require __DIR__ . '/magento_2_2/crontab.php';
+require __DIR__ . '/magento_2_2/files.php';
 require __DIR__ . '/magento_2_2/rollback.php';
 
 desc('Build Artifact');
@@ -24,6 +25,7 @@ task('build', function () {
     $origStaticOptions = get('static_deploy_options');
     set('static_deploy_options', '-f ' . $origStaticOptions);
 
+    invoke('files:remove-generated');
     invoke('deploy:vendors');
     invoke('config:remove-dev-modules');
     invoke('files:generate');
