@@ -81,6 +81,7 @@ task('deploy', [
     'deploy:symlink',
     'maintenance:unset',
     'cache:clear',
+    'cache:enable',
     'deploy:unlock',
     'cleanup',
     'success',
