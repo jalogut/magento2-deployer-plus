@@ -19,6 +19,11 @@ task('cache:clear:if-maintenance', function () {
         writeln('Skipped -> maintenance is not set');
 });
 
+set('cache_enabled_caches', 'all');
+
+/*
+ * One can provide specific caches as well.
+ * 
 set('cache_enabled_caches', 
     [
         'config',
@@ -37,18 +42,24 @@ set('cache_enabled_caches',
         'compiled_config',
     ]
 );
+ */
 
 task('cache:enable', function () {
     $enabledCaches = get('cache_enabled_caches');
     
-    if (!count($enabledCaches)) {
+    if (empty($enabledCaches)) {
         return;
     }
 
-    $command = sprintf(
-        '{{bin/php}} {{release_path}}/{{magento_bin}} cache:enable %s',
-        implode(' ', $enabledCaches)
-    );
+    $command = '{{bin/php}} {{release_path}}/{{magento_bin}} cache:enable';
 
-    run($command);
+    if ($enabledCaches === 'all') {
+        run($command);
+        return;
+    }
+
+    if (is_array($enabledCaches)) {
+        $command = $command . ' ' . implode(' ', $enabledCaches);
+        run($command);
+    }
 });
