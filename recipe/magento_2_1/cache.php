@@ -29,7 +29,6 @@ set('cache_enabled_caches',
         'db_ddl',
         'eav',
         'customer_notification',
-        'target_rule',
         'full_page',
         'config_integration',
         'config_integration_api',
@@ -46,6 +45,10 @@ task('cache:enable', function () {
         return;
     }
 
-    $implodedCaches = implode(' ', $enabledCaches);
-    run(sprintf('{{bin/php}} {{magento_bin}} cache:enable %s', $implodedCaches));
+    $command = sprintf(
+        '{{bin/php}} {{release_path}}/{{magento_bin}} cache:enable %s',
+        implode(' ', $enabledCaches)
+    );
+
+    run($command);
 });
