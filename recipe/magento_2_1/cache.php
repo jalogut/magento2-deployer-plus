@@ -18,3 +18,34 @@ task('cache:clear:if-maintenance', function () {
         invoke('cache:clear:magento') :
         writeln('Skipped -> maintenance is not set');
 });
+
+set('cache_enabled_caches', 
+    [
+        'config',
+        'layout',
+        'block_html',
+        'collections',
+        'reflection',
+        'db_ddl',
+        'eav',
+        'customer_notification',
+        'target_rule',
+        'full_page',
+        'config_integration',
+        'config_integration_api',
+        'translate',
+        'config_webservice',
+        'compiled_config',
+    ]
+);
+
+task('cache:enable', function () {
+    $enabledCaches = get('cache_enabled_caches');
+    
+    if (!count($enabledCaches)) {
+        return;
+    }
+
+    $implodedCaches = implode(' ', $enabledCaches);
+    run(sprintf('{{bin/php}} {{magento_bin}} cache:enable %s', $implodedCaches));
+});
