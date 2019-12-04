@@ -55,11 +55,9 @@ task('cache:enable', function () {
 
     if ($enabledCaches === 'all') {
         run($command);
-        return;
     }
 
     if (is_array($enabledCaches)) {
-        $command = $command . ' ' . implode(' ', $enabledCaches);
-        run($command);
+        run($command . ' ' . implode(' ', $enabledCaches));
     }
 });
