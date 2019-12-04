@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Deployer;
 
 // For Magento versions 2.2.6 and after, pre-existing generated directory needs to be cleared.
