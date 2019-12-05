@@ -56,6 +56,7 @@ task('deploy-artifact', [
     'cleanup',
     'success',
 ]);
+fail('deploy-artifact', 'deploy:failed');
 
 # ---- Deployment Flow
 desc('Deploy project');
