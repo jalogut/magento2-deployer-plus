@@ -19,7 +19,16 @@ task('cache:clear:if-maintenance', function () {
         writeln('Skipped -> maintenance is not set');
 });
 
+/*
+ * By default, cache enabling is disabled.
+ */
+set('cache_enabled_caches', '');
+
+/*
+ * To enable all caches after deployment, configure the following:
+ * 
 set('cache_enabled_caches', 'all');
+ */
 
 /*
  * One can provide specific caches as well.
