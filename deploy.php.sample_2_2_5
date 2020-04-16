@@ -15,6 +15,8 @@ set('magento_dir', 'magento');
 set('repository', '');
 // Space separated list of languages for static-content:deploy
 set('languages', 'en_US');
+// Enable all caches after deployment
+set('cache_enabled_caches', 'all');
 
 // OPcache configuration
 task('cache:clear:opcache', 'sudo systemctl reload php-fpm');
