@@ -26,7 +26,8 @@ task('artifact:package', 'tar --exclude-from={{artifact_excludes_file}} -czf {{a
 task('artifact:upload', function () {
     upload(get('artifact_path'), '{{release_path}}');
 });
+
 task('artifact:extract', '
-	tar -xzf {{release_path}}/{{artifact_file}} -C {{release_path}};
+	tar -xzpf {{release_path}}/{{artifact_file}} -C {{release_path}};
 	rm -rf {{release_path}}/{{artifact_file}}
 ');
