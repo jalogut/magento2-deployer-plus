@@ -25,6 +25,14 @@ set('repository', '');
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
 
+// Remove Composer autoloader optimization; it needs to be done separately after
+// Magento's DI compilation so that the generated classes are part of Composer's
+// classmap.
+set(
+    'composer_options',
+    str_replace(' --optimize-autoloader', '', get('composer_options'))
+);
+
 # ----- Magento properties -------
 set('magento_dir', 'magento');
 set('magento_bin', '{{magento_dir}}/bin/magento');

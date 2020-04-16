@@ -14,6 +14,7 @@ set('languages', 'en_US');
 set('static_deploy_options', '--exclude-theme=Magento/blank');
 
 task('files:compile', '{{bin/php}} {{magento_bin}} setup:di:compile');
+task('files:optimize-autoloader', '{{bin/composer}} dump-autoload --optimize --apcu');
 task('files:static_assets', '{{bin/php}} {{magento_bin}} setup:static-content:deploy {{languages}} {{static_deploy_options}}');
 task(
     'files:permissions',
@@ -23,6 +24,7 @@ task(
 desc('Generate Magento Files');
 task('files:generate', [
     'files:compile',
+    'files:optimize-autoloader',
     'files:static_assets',
     'files:permissions',
 ]);
