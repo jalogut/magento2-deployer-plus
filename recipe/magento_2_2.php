@@ -28,9 +28,17 @@ task('build', function () {
     $origStaticOptions = get('static_deploy_options');
     set('static_deploy_options', '-f ' . $origStaticOptions);
 
-    invoke('files:remove-generated');
+    set('release_name', '{{artifact_name}}'); // name of folder in releases
+
+    invoke('artifact:info');
+    invoke('artifact:prepare');
+
+    invoke('deploy:release');
+    invoke('deploy:update_code');
+
+    //invoke('files:remove-generated');
     invoke('deploy:vendors');
-    invoke('config:remove-dev-modules');
+    // invoke('config:remove-dev-modules'); // TO be discussed
     invoke('files:generate');
     invoke('artifact:package');
 })->local();
@@ -38,6 +46,7 @@ task('build', function () {
 desc('Deploy artifact');
 task('deploy-artifact', [
     'deploy:info',
+    'artifact:check',
     'deploy:prepare',
     'deploy:lock',
     'deploy:release',
@@ -90,3 +99,9 @@ task('deploy', [
     'cleanup',
     'success',
 ]);
+
+after('deploy:failed', 'deploy:unlock');
+
+before('rollback', 'rollback:validate');
+after('rollback', 'maintenance:unset');
+after('rollback', 'cache:clear');
