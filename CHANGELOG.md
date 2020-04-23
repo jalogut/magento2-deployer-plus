@@ -11,6 +11,29 @@ and this project adheres to [Semantic Version](http://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+## [2.7.1] - 16-04-2020
+### Changed
+* fix task `files:permissions` to change to `magento_dir` folder before set permissions
+
+## [2.7.0] - 05-12-2019
+### Added
+* task `cache:enable` to enable modules during deployment
+
+### Changed
+* Fixes wrong permissions after extracting archive
+
+## [2.6.0] - 05-12-2019
+### Changed
+* fix Grumphp Tests
+
+## [2.5.0] - 13-03-2019
+### Added
+* task `files:remove-generated` to delete generated folder content
+
+## [2.4.0] - 25-02-2019
+### Changed
+* `database:upgrade` to split `schema:upgrade` and `data:upgrade`
+
 ## [2.3.0] - 18-12-2018
 ### Changed
 
