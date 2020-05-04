@@ -29,14 +29,14 @@ set('cache_enabled_caches', '');
 
 /*
  * To enable all caches after deployment, configure the following:
- * 
-set('cache_enabled_caches', 'all');
  */
+//set('cache_enabled_caches', 'all');
+ 
 
 /*
  * One can provide specific caches as well.
- * 
-set('cache_enabled_caches', 
+ */
+/*set('cache_enabled_caches',
     [
         'config',
         'layout',
