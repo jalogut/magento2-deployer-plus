@@ -46,6 +46,7 @@ set('shared_dirs', [
     '{{magento_dir}}/var/log',
     '{{magento_dir}}/var/backups',
     '{{magento_dir}}/var/session',
+    '{{magento_dir}}/var/report',
 ]);
 
 set('override_shared_dirs', [
