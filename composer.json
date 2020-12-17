@@ -12,6 +12,7 @@
     }
   ],
   "require": {
+    "php": "~7.3.0||~7.4.0",
     "deployer/deployer": "^6.8"
   },
   "require-dev": {
