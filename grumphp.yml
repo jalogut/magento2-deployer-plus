@@ -1,4 +1,4 @@
-grumphp:
+parameters:
     bin_dir: ./vendor/bin
     git_dir: .
     stop_on_failure: false
