@@ -1,7 +1,7 @@
 var/cache
 var/page_cache
 _cache
-pub/media
+/pub/media
 env.php
 tests
 Test
