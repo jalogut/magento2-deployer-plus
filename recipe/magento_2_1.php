@@ -10,13 +10,13 @@ declare(strict_types=1);
 
 namespace Deployer;
 
-require 'recipe/common.php';
-require __DIR__ . '/magento_2_1/files.php';
-require __DIR__ . '/magento_2_1/maintenance.php';
-require __DIR__ . '/magento_2_1/database.php';
-require __DIR__ . '/magento_2_1/cache.php';
-require __DIR__ . '/magento_2_1/rollback.php';
-require __DIR__ . '/magento_2_1/override_shared.php';
+require_once 'recipe/common.php';
+require_once __DIR__ . '/magento_2_1/files.php';
+require_once __DIR__ . '/magento_2_1/maintenance.php';
+require_once __DIR__ . '/magento_2_1/database.php';
+require_once __DIR__ . '/magento_2_1/cache.php';
+require_once __DIR__ . '/magento_2_1/rollback.php';
+require_once __DIR__ . '/magento_2_1/override_shared.php';
 
 # ----- Deployment properties ---
 set('default_timeout', 900);

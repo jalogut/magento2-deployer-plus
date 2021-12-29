@@ -10,15 +10,15 @@ declare(strict_types=1);
 
 namespace Deployer;
 
-require 'recipe/common.php';
-require __DIR__ . '/magento_2_1.php';
-require __DIR__ . '/magento_2_2/artifact.php';
-require __DIR__ . '/magento_2_2/maintenance.php';
-require __DIR__ . '/magento_2_2/database.php';
-require __DIR__ . '/magento_2_2/config.php';
-require __DIR__ . '/magento_2_2/crontab.php';
-require __DIR__ . '/magento_2_2/files.php';
-require __DIR__ . '/magento_2_2/rollback.php';
+require_once 'recipe/common.php';
+require_once __DIR__ . '/magento_2_1.php';
+require_once __DIR__ . '/magento_2_2/artifact.php';
+require_once __DIR__ . '/magento_2_2/maintenance.php';
+require_once __DIR__ . '/magento_2_2/database.php';
+require_once __DIR__ . '/magento_2_2/config.php';
+require_once __DIR__ . '/magento_2_2/crontab.php';
+require_once __DIR__ . '/magento_2_2/files.php';
+require_once __DIR__ . '/magento_2_2/rollback.php';
 
 desc('Build Artifact');
 task('build', function () {
